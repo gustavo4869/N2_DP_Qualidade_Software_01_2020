@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./indexINSS.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="./indexINSS.js"></script>
+        <title>N2 - Qualidade de Software - INSS</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="./home.html">Página Inicial</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./indexPoupanca.html">Previsão de Poupança <span class="sr-only">(current)</span></a>
+                    </li>                
+                </ul>
+            </div>
+        </nav>
+        <center>
+            <h2>Tabela de Cálculo INSS</h2>            
+            <BR>
+            <table class="table tabela">                
+                <tr>
+                    <th>Minimo</th>
+                    <th>Máximo</th>
+                    <th>Taxa INSS</th>
+                    <th>Valor de Desconto</th>
+                </tr>
+                <tr>
+                    <td>R$ 0</td>
+                    <td>R$ 1045,00</td>
+                    <td>7,5%</td>
+                    <td id="tdDesconto1"></td>
+                </tr>
+                <tr>
+                    <td>R$ 1045,01</td>
+                    <td>R$ 2089,60</td>
+                    <td>9%</td>
+                    <td id="tdDesconto2"></td>
+                </tr>
+                <tr>
+                    <td>R$ 2089,61</td>
+                    <td>R$ 3134,40</td>
+                    <td>12%</td>
+                    <td id="tdDesconto3"></td>
+                </tr>
+                <tr>
+                    <td>R$ 3134,41</td>
+                    <td>R$ 6101,06</td>
+                    <td>14%</td>
+                    <td id="tdDesconto4"></td>
+                </tr>
+                <tr>
+                    <td>R$ 6101,07</td>
+                    <td>R$ 100.000,00</td>
+                    <td>R$ 713,08</td>
+                    <td id="tdDesconto5"></td>
+                </tr>
+            </table>
+        </center>
+        <div>
+            <hr>            
+            <form>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <h5>Informe o seu salário para efetuar o cálculo do desconto.</h5>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+                        <input id="salario" name="salario" type="number" min="0" max="100000" step="0.01" class="form-control" placeholder="Salário" required>
+                    </div>
+                    <div class="col-sm-2">
+                        <input id="finss" name="finss" type="text" class="form-control" placeholder="Alíquota" disabled>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="button" id="calcular" value="Calcular INSS" class="btn btn-primary">
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </form>                   
+        </div>
+
+        <!-- Modal Erro -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Erro!</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p id="msgErro"></p>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
